@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>SHANGHAI BIRD · 沪翼集</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="一个从上海出发的城市与鸟类观察计划，记录飞来飞去的人和故事。" />
+  <style>
+    /* Basic reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans SC", system-ui, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      position: relative; /* for language switch button */
+    }
+
+    .brand {
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      color: #777;
+      margin-bottom: 4px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #999;
+    }
+
+    .tagline {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    .list {
+      list-style: none;
+    }
+
+    .list li::before {
+      content: "·";
+      margin-right: 6px;
+    }
+
+    .follow {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .qrcode {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .qrcode img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .follow-text {
+      flex: 1;
+      min-width: 180px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Language switch button */
+    .lang-switch-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.9);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-switch-btn span {
+      opacity: 0.6;
+    }
+
+    .lang-switch-btn .active {
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+        border-radius: 18px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      .tagline {
+        font-size: 15px;
+      }
+    }
+
+    /* Language visibility helpers 
+    .en { display: none; }*/
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Language switch -->
+    <button id="lang-switch" class="lang-switch-btn" type="button">
+      <span class="zh-label active">中文</span>
+      <span>·</span>
+      <span class="en-label">EN</span>
+    </button>
+
+    <div class="brand">SHANGHAI BIRD</div>
+    <div class="title-row">
+      <h1 class="zh">沪翼集</h1>
+      <h1 class="en">ShanghaiBird</h1>
+      <span class="subtitle">Birds · City · Migration</span>
+    </div>
+
+    <p class="tagline zh">
+      一个从上海出发的城市与鸟类观察计划，记录飞来飞去的人、鸟和故事。
+    </p>
+    <p class="tagline en">
+      A city and bird observation project starting from Shanghai, archiving stories of people and birds passing through this place.
+    </p>
+
+    <section class="section">
+      <div class="section-title zh">关于 ABOUT</div>
+      <div class="section-title en">ABOUT</div>
+      <p class="zh">
+        我们关心上海的鸟，也关心在这里停留、离开、再回来的人。
+        通过散步、观察、录音和聊天，把看上去无关紧要的小事，慢慢积累成一座声音和记忆的档案馆。
+      </p>
+      <p class="en">
+        We care about the birds of Shanghai, and also the people who stay, leave, and return.
+        Through walking, watching, recording and conversations, we slowly turn seemingly trivial moments into an archive of sound and memory.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-title zh">WHAT WE ARE DOING</div>
+      <div class="section-title en">WHAT WE ARE DOING</div>
+      <ul class="list zh">
+        <li>筹备一档关于上海、鸟类与迁徙记忆的播客</li>
+        <li>记录城市里人和鸟的相遇、错过与再见</li>
+        <li>试验一张「声音地图」：用声音标记城市中的栖息地与流动路线</li>
+      </ul>
+      <ul class="list en">
+        <li>Preparing a podcast about Shanghai, birds and memories of migration</li>
+        <li>Recording encounters, missed meetings and reunions between people and birds in the city</li>
+        <li>Experimenting with a “sound map” that marks habitats and routes of movement through sound</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-title zh">FOLLOW</div>
+      <div class="section-title en">FOLLOW</div>
+      <div class="follow">
+        <div class="qrcode">
+          <!-- Replace with your real WeChat Official Account QR image -->
+          <img src="images/qrcode-placeholder.jpg" alt="WeChat Official Account QR" />
+        </div>
+        <div class="follow-text">
+          <p class="zh">微信搜索：<strong>沪翼集</strong>，或扫码关注。</p>
+          <p class="en">On WeChat, search for <strong>沪翼集</strong>,<strong>Shanghaibird</strong> or scan the QR code to follow.</p>
+          <p class="zh">新节目的更新、线下观察活动，以及声音地图的测试入口，都会优先在公众号公布。</p>
+          <p class="en">New episodes, offline walks, and early tests of the sound map will be announced on the Official Account first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title zh">COMING SOON</div>
+      <div class="section-title en">COMING SOON</div>
+      <p class="zh">
+        未来这里会逐步开放：声音地图、城市观察日志、与鸟类和迁徙主题相关的线下活动报名等。
+        现在，你可以先把这个页面当作一张从上海出发的小小「登机牌」。
+      </p>
+      <p class="en">
+        In the future this site will gradually open up: a sound map, city observation notes, and offline events around birds and migration.
+        For now, you can treat this page as a small “boarding pass” that departs from Shanghai.
+      </p>
+    </section>
+
+    <div class="footer">
+      <span>© <span id="year"></span> SHANGHAI BIRD</span>
+      <span>Made in Shanghai</span>
+    </div>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language toggle logic
+    (function () {
+      var currentLang = 'zh'; // default language
+      var switchBtn = document.getElementById('lang-switch');
+      var zhLabels = document.querySelectorAll('.zh');
+      var enLabels = document.querySelectorAll('.en');
+      var zhLabelBtn = switchBtn.querySelector('.zh-label');
+      var enLabelBtn = switchBtn.querySelector('.en-label');
+
+      // Helper to set language
+      function setLanguage(lang) {
+        currentLang = lang;
+
+        // Toggle html lang attribute for accessibility and SEO
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+        // Show / hide language blocks
+        zhLabels.forEach(function (el) {
+          el.style.display = lang === 'zh' ? '' : 'none';
+        });
+        enLabels.forEach(function (el) {
+          el.style.display = lang === 'en' ? '' : 'none';
+        });
+
+        // Update button state
+        if (lang === 'zh') {
+          zhLabelBtn.classList.add('active');
+          enLabelBtn.classList.remove('active');
+        } else {
+          zhLabelBtn.classList.remove('active');
+          enLabelBtn.classList.add('active');
+        }
+      }
+
+      // Initialize
+      setLanguage('zh');
+
+      // Attach click event
+      switchBtn.addEventListener('click', function () {
+        var nextLang = currentLang === 'zh' ? 'en' : 'zh';
+        setLanguage(nextLang);
+      });
+    })();
+  </script>
+</body>
+</html>
