@@ -165,6 +165,26 @@
 
     /* Language visibility helpers 
     .en { display: none; }*/
+
+
+    /* Font size switch button */
+.font-switch-btn {
+  position: absolute;
+  top: 16px;
+  right: 72px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+/* Font size states */
+.font-small { font-size: 13px; }
+.font-medium { font-size: 14px; }
+.font-large { font-size: 16px; }
+
   </style>
 </head>
 <body>
@@ -175,6 +195,8 @@
       <span>·</span>
       <span class="en-label">EN</span>
     </button>
+    
+    <button id="font-switch" class="font-switch-btn" type="button">A</button>
 
     <div class="brand">SHANGHAI BIRD</div>
     <div class="title-row">
@@ -301,6 +323,27 @@
         setLanguage(nextLang);
       });
     })();
+
+// Font size toggle logic
+(function () {
+  var fontLevels = ['font-small', 'font-medium', 'font-large'];
+  var currentIndex = 1; // default medium
+  var btn = document.getElementById('font-switch');
+
+  document.body.classList.add(fontLevels[currentIndex]);
+
+  btn.addEventListener('click', function () {
+    document.body.classList.remove(fontLevels[currentIndex]);
+
+    currentIndex = (currentIndex + 1) % fontLevels.length;
+
+    document.body.classList.add(fontLevels[currentIndex]);
+
+    // Update button display
+    btn.textContent = currentIndex === 0 ? 'A-' : currentIndex === 1 ? 'A' : 'A+';
+  });
+})();
+
   </script>
 </body>
 </html>
