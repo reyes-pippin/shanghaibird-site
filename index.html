@@ -170,20 +170,30 @@
     /* Font size switch button */
 .font-switch-btn {
   position: absolute;
-  top: 16px;
-  right: 72px;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.9);
-  cursor: pointer;
+    top: 16px;
+    right: 102px;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+}
+/* Global font size scaling */
+body.font-small,
+body.font-small * {
+  font-size: 90% !important;
 }
 
-/* Font size states */
-.font-small { font-size: 13px; }
-.font-medium { font-size: 14px; }
-.font-large { font-size: 16px; }
+body.font-medium,
+body.font-medium * {
+  font-size: 100% !important;
+}
+
+body.font-large,
+body.font-large * {
+  font-size: 115% !important;
+}
 
   </style>
 </head>
