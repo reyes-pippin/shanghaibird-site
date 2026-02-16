@@ -282,7 +282,8 @@ body.font-large * {
 
   <script>
     // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent =
+  ((s=2025,c=new Date().getFullYear()), c>s?`${s}–${c}`:s);
 
     // Language toggle logic
     (function () {
