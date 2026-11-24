@@ -918,6 +918,7 @@
     // Language toggle logic
     (function () {
       var currentLang = "en";
+      var languageStorageKey = "shanghaibird.language";
       var switchButton = document.getElementById("lang-switch");
 
       if (!switchButton) {
@@ -926,6 +927,17 @@
 
       var zhElements = document.querySelectorAll(".zh");
       var enElements = document.querySelectorAll(".en");
+
+      function getSavedLanguage() {
+        try {
+          var savedLanguage = window.localStorage.getItem(languageStorageKey);
+          return savedLanguage === "zh" || savedLanguage === "en"
+            ? savedLanguage
+            : "en";
+        } catch (error) {
+          return "en";
+        }
+      }
 
       var zhButtonLabel =
         switchButton.querySelector(".zh-label");
@@ -938,6 +950,11 @@
 
       function setLanguage(lang) {
         currentLang = lang;
+        try {
+          window.localStorage.setItem(languageStorageKey, lang);
+        } catch (error) {
+          // Continue using the selected language for this page if storage is unavailable.
+        }
 
         document.body.classList.toggle("lang-en", lang === "en");
         document.body.classList.toggle("lang-zh", lang === "zh");
@@ -992,7 +1009,7 @@
         }
       }
 
-      setLanguage("en");
+      setLanguage(getSavedLanguage());
 
       switchButton.addEventListener("click", function () {
         setLanguage(
